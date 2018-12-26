@@ -1,5 +1,5 @@
 #!usr/bin/python3
-#<-- coding=utf8 -->
+# -*- coding: utf-8 -*-
 """
 26 December 2018
 author: Yusuf Berkay Girgin
