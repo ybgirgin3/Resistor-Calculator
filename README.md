@@ -1,3 +1,3 @@
-This basic app just requiring Python3
+This basic app just requires Python3
 
 # ResistorCalculator
