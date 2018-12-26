@@ -47,17 +47,17 @@ def gettingValueByKey(color1, color2, color3):
     # controlling  if color1 in main_color_values named dictionary
     if color1 in main_color_values:
         color1Key = main_color_values[color1]
-        print("value of the resistor is: {}".format(color1Key))
+        print("value of the first color is: {}".format(color1Key))
 
     # controlling  if color2 in main_color_values named dictionary
     if color2 in main_color_values:
         color2Key = main_color_values[color2]
-        print("value of the resistor is: {}".format(color2Key))
+        print("value of the second color is: {}".format(color2Key))
 
     # controlling  if color3 in multipler_values named dictionary
     if color3 in multipler_values:
         color3Key = multipler_values[color3]
-        print("value of the resistor is: {}".format(color3Key))
+        print("value of the multipler color is: {}".format(color3Key))
 
     result(color1Key, color2Key, color3Key)
 
