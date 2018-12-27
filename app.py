@@ -25,7 +25,7 @@ def result(color1Key, color2Key, color3Key):
 
     # for adding kilo ohm functionality if multipler value is bigger than 1000
     if color3Key > 999 or invertString == 47:
-        Kohm = int(sonuc) * int((color3Key/1000))
+        Kohm = int(invertString) * int((color3Key/1000))
 
         # for adding M kilo ohm functionality if the kilo ohm value that mentioned above is bigger than 1000
         if Kohm > 999:
