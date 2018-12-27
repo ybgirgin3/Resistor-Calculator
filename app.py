@@ -21,24 +21,28 @@ multipler_values = {
 
 def result(color1Key, color2Key, color3Key):
     # making program read the color1 and color2 values like "1"+"1" = "11" in javascript
-    invertString = str(color1Key) + str(color2Key)
+    invertToString = str(color1Key) + str(color2Key)
 
     # for adding kilo ohm functionality if multipler value is bigger than 1000
-    if color3Key > 999 or invertString == 47:
-        Kohm = int(invertString) * int((color3Key/1000))
+    if color3Key > 999 or invertToString == 47:
+        Kohm = int(invertToString) * int((color3Key/1000))
 
         # for adding M kilo ohm functionality if the kilo ohm value that mentioned above is bigger than 1000
         if Kohm > 999:
             print("value of the resistor is: {}Mk ohm".format(Kohm/1000))
+            print("\n")
         else:
             print("value of the resistor is: {}k ohm".format(Kohm))
+            print("\n")
 
     else:
-        ohm = int(invertString) * color3Key
+        ohm = int(invertToString) * color3Key
         if ohm > 999:
             print("value of the resistor is: {}k ohm".format(ohm/1000))
+            print("\n")
         else:
             print("value of the resistor is {} ohm".format(ohm))
+            print("\n")
 
 
 # processing values
@@ -62,15 +66,7 @@ def gettingValueByKey(color1, color2, color3):
     result(color1Key, color2Key, color3Key)
 
 
-if __name__ == '__main__':
-    print("""
-        - This app doesn't use tolerance value while calculating the Ohm
-        
-        Reminder for people who don't have knowledge about resistors;
-        - We can begin to read colors on the resistor with the closest color to edge
-
-    """)
-    
+def gettingKeysFromUser():
     # getting colors from user
     firstColor = input("first color name: ")
     secondColor = input("second color name: ")
@@ -78,3 +74,24 @@ if __name__ == '__main__':
     
     # sending values to process
     gettingValueByKey(firstColor, secondColor, thirdColor)
+
+    
+    
+if __name__ == '__main__':
+    print("""
+        - This app doesn't use tolerance value while calculating the Ohm
+        
+        Reminder for people who don't have knowledge about resistors;
+        - We can begin to read colors on the resistor with the closest color to edge
+        ** for exiting the app use CTRL-C key combination **
+
+    """)
+    while True:
+        try:
+            gettingKeysFromUser()
+        
+        except KeyboardInterrupt:
+            print("\n")
+            from sys import exit
+            exit(0)
+    
