@@ -1,5 +1,5 @@
 #!usr/bin/python3
-# -*- coding: utf-8 -*-
+# -*- coding: utf8 -*-
 """
 26 December 2018
 author: Yusuf Berkay Girgin
@@ -19,79 +19,114 @@ multipler_values = {
 }
 
 
-def result(color1Key, color2Key, color3Key):
-    # making program read the color1 and color2 values like "1"+"1" = "11" in javascript
-    invertToString = str(color1Key) + str(color2Key)
+def resultOfFindingValue(color1Key, color2Key, color3Key):
+    sonuc = str(color1Key) + str(color2Key)
 
-    # for adding kilo ohm functionality if multipler value is bigger than 1000
-    if color3Key > 999 or invertToString == 47:
-        Kohm = int(invertToString) * int((color3Key/1000))
+    if color3Key > 999 or sonuc == 47:
+        Kohm = int(sonuc) * int((color3Key/1000))
 
-        # for adding M kilo ohm functionality if the kilo ohm value that mentioned above is bigger than 1000
         if Kohm > 999:
             print("value of the resistor is: {}Mk ohm".format(Kohm/1000))
-            print("\n")
+
         else:
             print("value of the resistor is: {}k ohm".format(Kohm))
-            print("\n")
 
     else:
-        ohm = int(invertToString) * color3Key
+        ohm = int(sonuc) * color3Key
+
         if ohm > 999:
             print("value of the resistor is: {}k ohm".format(ohm/1000))
-            print("\n")
+
         else:
             print("value of the resistor is {} ohm".format(ohm))
-            print("\n")
 
 
-# processing values
+
+def resultOfFindingKey(color1Value, color2Value, pointValue):
+    pass
+
+
+
 def gettingValueByKey(color1, color2, color3):
-  
-    # controlling  if color1 in main_color_values named dictionary
+
     if color1 in main_color_values:
         color1Key = main_color_values[color1]
-        print("value of the first color is: {}".format(color1Key))
+        print("value of the resistor is: {}".format(color1Key))
 
-    # controlling  if color2 in main_color_values named dictionary
     if color2 in main_color_values:
         color2Key = main_color_values[color2]
-        print("value of the second color is: {}".format(color2Key))
+        print("value of the resistor is: {}".format(color2Key))
 
-    # controlling  if color3 in multipler_values named dictionary
     if color3 in multipler_values:
         color3Key = multipler_values[color3]
-        print("value of the multipler color is: {}".format(color3Key))
+        print("value of the resistor is: {}".format(color3Key))
 
-    result(color1Key, color2Key, color3Key)
+    resultOfFindingValue(color1Key, color2Key, color3Key)
 
 
-def gettingKeysFromUser():
-    # getting colors from user
-    firstColor = input("first color name: ")
-    secondColor = input("second color name: ")
-    thirdColor = input("multipler color name: ")
+
+def gettingKeyByValue(Int1, Int2, pointInt):#, unit):
     
-    # sending values to process
-    gettingValueByKey(firstColor, secondColor, thirdColor)
+    for color1, num1 in main_color_values.items():
+        if num1 == Int1:
+            print("first color of the resistor: {}".format(color1))
+
+    for color2, num2 in main_color_values.items():
+        if num2 == Int2:
+            print("second color of the resistor: {}".format(color2))
+
+            
+
+    for powerOfTen, multiplerValue in multipler_values.items():
+
+        if multiplerValue == pointInt:
+            print("multipler color of the resistor: {}".format(powerOfTen))
 
     
     
+
 if __name__ == '__main__':
     print("""
         - This app doesn't use tolerance value while calculating the Ohm
-        
         Reminder for people who don't have knowledge about resistors;
         - We can begin to read colors on the resistor with the closest color to edge
-        ** for exiting the app use CTRL-C key combination **
 
     """)
-    while True:
-        try:
-            gettingKeysFromUser()
-        
-        except KeyboardInterrupt:
-            print("\n")
-            from sys import exit
-            exit(0)
-    
+    print("Color -> Key [1]\nKey -> Color [2]")
+    colorOrInt = int(input(": "))
+    if colorOrInt == 1:
+
+        firstColor = input("first color name: ")
+        secondColor = input("second color name: ")
+        thirdColor = input("multipler color name: ")
+
+        gettingValueByKey(firstColor, secondColor, thirdColor)
+
+    elif colorOrInt == 2:
+
+        global firstInteger, secondInteger
+
+        print("""
+            - resistor value must be in ohm!!
+            - first you need the enter your resistor value without point 
+            if it has and later you need the find your point area by calculating which power of ten
+            you need to divide the number !!!
+        """)
+
+
+        firstInteger    = int(input("first integer value: "))
+        secondInteger   = int(input("second integer value: "))
+
+
+        # pointPlace must be like;
+        # for example if your value of resistor is 2.6 ohm
+        # you need to enter your firstInteger and secondInteger like 2 and 6 
+        # without point between them
+        # then you need to find your point place like;
+        # if we divide 0.1 to 26 it gives us 2.6 and 
+        # it means our pointPlace has value as 0.1
+
+        pointPlace      = float(input("1/multipler value: "))
+
+        # sending values to function
+        gettingKeyByValue(firstInteger, secondInteger, pointPlace)
