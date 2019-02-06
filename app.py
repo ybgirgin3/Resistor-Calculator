@@ -94,16 +94,7 @@ def gettingKeyByValue(Int1, Int2, pointInt):
     floatToInt = int(pointInt)
     resultOfFindingValue(Int1, Int2, floatToInt)
 
-
-# run program
-if __name__ == '__main__':
-    print("""
-        - This app doesn't use tolerance value while calculating the Ohm.
-        Reminder for people who don't have knowledge about resistors;
-        - We can begin to read colors on the resistor with the
-        closest color to edge
-
-    """)
+def main():
     print("Color -> Key [1]\nKey -> Color [2]")
     colorOrInt = int(input(": "))
     if colorOrInt == 1:
@@ -148,3 +139,17 @@ if __name__ == '__main__':
         # sending values to function
         gettingKeyByValue(firstInteger, secondInteger, pointPlace)
 
+
+    
+    
+# run program
+if __name__ == '__main__':
+    print("""
+        - This app doesn't use tolerance value while calculating the Ohm.
+        Reminder for people who don't have knowledge about resistors;
+        - We can begin to read colors on the resistor with the
+        closest color to edge
+
+    """)
+    main()
+    
