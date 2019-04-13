@@ -9,7 +9,6 @@ This option requires color values on the resistor to calculate numeric value of 
 
 
 **Information for people who don't have knowledge about resistors;**
-
         - We can begin to read colors on the resistor with the closest color to edge so that's it.
         
         
