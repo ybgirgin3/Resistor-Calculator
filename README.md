@@ -2,15 +2,14 @@
 
 Automation for calculate resistors value
 
+**Information for people who don't have knowledge about resistors;**
+        - We begin to read colors on the resistor with the closest color to edge so that's it.
+
 You have two option;
 
-- Color to key;
+- key to color;
 This option requires color values on the resistor to calculate numeric value of resistor. This app doesn't use tolerance value while calculating the Ohm.
 
-
-**Information for people who don't have knowledge about resistors;**
-        - We can begin to read colors on the resistor with the closest color to edge so that's it.
-        
         
 **How it works**
 
@@ -38,3 +37,9 @@ main_color_values = {
     "blue": 6, "purple": 7, "gray": 8, "white": 9
 }
 ```
+
+
+- color to key;
+        takes color values from you and makes reverse process to get key value of the resistor
+
+        
