@@ -10,11 +10,12 @@ This option requires color values on the resistor to calculate numeric value of 
 
 **Information for people who don't have knowledge about resistors;**
 
-
         - We can begin to read colors on the resistor with the closest color to edge so that's it.
         
         
 **How it works**
+
+
 for example if your value of resistor is 2.6 ohm;
   you need to enter your firstInteger and secondInteger like, 
   they're single number without point between them (as 26),
