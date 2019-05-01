@@ -59,7 +59,7 @@ chmod +x resCalc.py
 ```sh
 sudo (your favorite text editor) /home/$USER/.local/share/applications/resCalc.desktop
 ```
-and paste this lines to your text editor
+3- paste this lines to your text editor
 ```vim
 #!/usr/bin/env xdg-open
 
@@ -70,4 +70,4 @@ Icon=/home/berkay/Masaüstü/SelfMade/res-logo.png
 Name=Res Calc
 Exec=/home/(username)/(repository's path)/resCalc.py
 ```
-save and search it from your app menu
+4- save and search it from your app menu
