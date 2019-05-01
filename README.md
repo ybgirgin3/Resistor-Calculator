@@ -42,4 +42,32 @@ main_color_values = {
 - color to key;
         takes color values from you and makes reverse process to get key value of the resistor
 
-        
+
+**TODO FOR GETTING IT IS AS A DESKTOP APP**
+for linux;
+
+
+1- Make it executable 
+
+```sh
+chmod +x resCalc.py
+```
+
+2- Access your application folder from this command
+
+
+```sh
+sudo (your favorite text editor) /home/$USER/.local/share/applications/resCalc.desktop
+```
+and paste this lines to your text editor
+```vim
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Type=Application
+Terminal=True
+Icon=/home/berkay/Masaüstü/SelfMade/res-logo.png
+Name=Res Calc
+Exec=/home/(username)/(repository's path)/resCalc.py
+```
+save and search it from your app menu
