@@ -3,7 +3,8 @@
 Automation for calculate resistors value
 
 **Information for people who don't have knowledge about resistors;**
-        - We begin to read colors on the resistor with the closest color to edge so that's it.
+       
+       - We begin to read colors on the resistor with the closest color to edge so that's it.
 
 You have two option;
 
